@@ -10,18 +10,18 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     val horoscopeList:List<Horoscope> = listOf(
-        Horoscope("aries", "Aries","Mar 21–Apr 19", R.drawable.aries_icon , R.color.Gold),
-        Horoscope("aries", "Taurus","Apr 20–May 20", R.drawable.taurus_icon, R.color.purple_700),
-        Horoscope("aries", "Gemini","May 21–Jun 21", R.drawable.gemini_icon, R.color.Cornsilk),
-        Horoscope("aries", "Cancer","Jun 22–Jul 22", R.drawable.cancer_icon, R.color.Coral),
-        Horoscope("aries", "Leo","Jul 23–Aug 22", R.drawable.leo_icon, R.color.DarkOrange),
-        Horoscope("aries", "Virgo","Aug 23–Sep 22", R.drawable.virgo_icon, R.color.Ivory),
-        Horoscope("aries", "Libra","Sep 23–Oct 23", R.drawable.libra_icon, R.color.teal_200),
-        Horoscope("aries", "Scorpio","Oct 24–Nov 21", R.drawable.scorpio_icon, R.color.Chocolate),
-        Horoscope("aries", "Sagittarius","Nov 22–Dec 21", R.drawable.sagittarius_icon, R.color.Azure),
-        Horoscope("aries", "Capricorn","Dec 22–Jan 19", R.drawable.capricorn_icon, R.color.AliceBlue),
-        Horoscope("aries", "Aquarius","Jan 20–Feb 18", R.drawable.aquarius_icon, R.color.PaleTurquoise),
-        Horoscope("aries", "Pisces","Feb 19–Mar 20", R.drawable.pisces_icon, R.color.SteelBlue)
+        Horoscope("aries", "Aries","Mar 21–Apr 19", R.drawable.aries_icon , R.color.gris_perla),
+        Horoscope("aries", "Taurus","Apr 20–May 20", R.drawable.taurus_icon, R.color.gris_carbón),
+        Horoscope("aries", "Gemini","May 21–Jun 21", R.drawable.gemini_icon, R.color.beige_claro),
+        Horoscope("aries", "Cancer","Jun 22–Jul 22", R.drawable.cancer_icon, R.color.coral_suave),
+        Horoscope("aries", "Leo","Jul 23–Aug 22", R.drawable.leo_icon, R.color.ocre_dorado),
+        Horoscope("aries", "Virgo","Aug 23–Sep 22", R.drawable.virgo_icon, R.color.verde_salvia),
+        Horoscope("aries", "Libra","Sep 23–Oct 23", R.drawable.libra_icon, R.color.azul_polvo),
+        Horoscope("aries", "Scorpio","Oct 24–Nov 21", R.drawable.scorpio_icon, R.color.granate),
+        Horoscope("aries", "Sagittarius","Nov 22–Dec 21", R.drawable.sagittarius_icon, R.color.lila),
+        Horoscope("aries", "Capricorn","Dec 22–Jan 19", R.drawable.capricorn_icon, R.color.verde_oliva),
+        Horoscope("aries", "Aquarius","Jan 20–Feb 18", R.drawable.aquarius_icon, R.color.azul_acero),
+        Horoscope("aries", "Pisces","Feb 19–Mar 20", R.drawable.pisces_icon, R.color.azul_pálido)
     )
     lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
