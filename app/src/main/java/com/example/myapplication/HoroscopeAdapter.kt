@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,14 +17,13 @@ class HoroscopeAdapter(private val dataSet: List<Horoscope>) :
         val nameTextView: TextView
         val logoImageView: ImageView
         val descriptionTextView: TextView
-
-
+        val cardViewGrid :View
         init {
             // Define click listener for the ViewHolder's View
             nameTextView = view.findViewById(R.id.nameTextView)
             logoImageView = view.findViewById(R.id.logoImageView)
             descriptionTextView = view.findViewById(R.id.descriptionTextview)
-
+            cardViewGrid = view.findViewById(R.id.cardViewGrid)
         }
         fun render(horoscope: Horoscope) {
             nameTextView.setText(horoscope.name)
@@ -51,6 +51,8 @@ class HoroscopeAdapter(private val dataSet: List<Horoscope>) :
        // viewHolder.logoImageView.setImageResource(horoscope.logo)
        // viewHolder.descriptionTextView.text = horoscope.description
        // viewHolder.logoImageView.setBackgroundColor(horoscope.color)
+
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
