@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var filterAireSwitch: Switch
     lateinit var filterAguaSwitch: Switch
     lateinit var filterTierraSwitch: Switch
-
+    private lateinit var adapter: HoroscopeAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,39 +30,40 @@ class MainActivity : AppCompatActivity() {
         filterAireSwitch = findViewById(R.id.filterAireSwitch)
         filterAguaSwitch = findViewById(R.id.filterAguaSwitch)
         filterTierraSwitch = findViewById(R.id.filterTierraSwitch)
-/*
-        filterFuegoSwitch?.setOnCheckedChangeListener({ _ , isChecked ->
-            val message = if (isChecked) "filterFuegoSwitch:ON" else "filterFuegoSwitch:OFF"
-            Toast.makeText(this@MainActivity, message,
-                Toast.LENGTH_SHORT).show()
-        })
-        filterAireSwitch = findViewById(R.id.filterAireSwitch)
-        filterAireSwitch?.setOnCheckedChangeListener({ _ , isChecked ->
-            val message = if (isChecked) "filterAireSwitch:ON" else "filterAireSwitch:OFF"
-            Toast.makeText(this@MainActivity, message,
-                Toast.LENGTH_SHORT).show()
-        })
-        filterAguaSwitch = findViewById(R.id.filterAguaSwitch)
-        filterAguaSwitch?.setOnCheckedChangeListener({ _ , isChecked ->
-            val message = if (isChecked) "filterAguaSwitch:ON" else "filterAguaSwitch:OFF"
-            Toast.makeText(this@MainActivity, message,
-                Toast.LENGTH_SHORT).show()
-        })
-        filterTierraSwitch = findViewById(R.id.filterTierraSwitch)
-        filterTierraSwitch?.setOnCheckedChangeListener({ _ , isChecked ->
-            val message = if (isChecked) "filterTierraSwitch:ON" else "filterTierraSwitch:OFF"
-            Toast.makeText(this@MainActivity, message,
-                Toast.LENGTH_SHORT).show()
-        }) */
 
-            val adapter = HoroscopeAdapter(horoscopeList){position ->
+
+            adapter = HoroscopeAdapter(horoscopeList){position ->
                 navigateToDetail(horoscopeList[position])
             }
             recyclerView.adapter = adapter
             recyclerView.layoutManager= GridLayoutManager(this, 2)
             //recyclerView.setBackgroundColor(Horoscope.color)
+            setupSwitchListeners()
 
         }
+
+    private fun setupSwitchListeners() {
+        val switchListener = {
+            applyFilters()
+        }
+
+        filterFuegoSwitch.setOnCheckedChangeListener { _, _ -> switchListener() }
+        filterAireSwitch.setOnCheckedChangeListener { _, _ -> switchListener() }
+        filterAguaSwitch.setOnCheckedChangeListener { _, _ -> switchListener() }
+        filterTierraSwitch.setOnCheckedChangeListener { _, _ -> switchListener() }
+    }
+
+    private fun applyFilters() {
+        horoscopeList = HoroscopeProvider.findAll().filter {
+            (filterFuegoSwitch.isChecked && it.elemento == "FUEGO") ||
+                    (filterAireSwitch.isChecked && it.elemento == "AIRE") ||
+                    (filterAguaSwitch.isChecked && it.elemento == "AGUA") ||
+                    (filterTierraSwitch.isChecked && it.elemento == "TIERRA") ||
+                    (!filterFuegoSwitch.isChecked && !filterAireSwitch.isChecked && !filterAguaSwitch.isChecked && !filterTierraSwitch.isChecked)
+        }
+     adapter.updateData(horoscopeList)
+    }
+
     fun navigateToDetail(horoscope:Horoscope){
         val intent:Intent=Intent(this,DetailActivity::class.java)
         intent.putExtra(DetailActivity.EXTRA_HOROSCOPE_ID, horoscope.id)

@@ -13,10 +13,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.math.absoluteValue
 
-class HoroscopeAdapter(private val dataSet: List<Horoscope>,
-    val onItemClickListener: (Int) -> Unit):
+
+class HoroscopeAdapter(private var dataSet: List<Horoscope>,
+                       val onItemClickListener: (Int) -> Unit):
     RecyclerView.Adapter<HoroscopeAdapter.HoroscopeViewHolder>() {
 
 
@@ -26,21 +26,21 @@ class HoroscopeAdapter(private val dataSet: List<Horoscope>,
         val logoImageView: ImageView
         val descriptionTextView: TextView
         val logoCardView : CardView
-        var filterFuegoSwitch: Switch
+       /* var filterFuegoSwitch: Switch
         var filterAireSwitch: Switch
         var filterAguaSwitch: Switch
         var filterTierraSwitch: Switch
-
+        */
         init {
             // Define click listener for the ViewHolder's View
             nameTextView = view.findViewById(R.id.nameTextView)
             logoImageView = view.findViewById(R.id.logoImageView)
             descriptionTextView = view.findViewById(R.id.descriptionTextview)
             logoCardView = view.findViewById(R.id.logoCardView)
-            filterFuegoSwitch = view.findViewById(R.id.filterFuegoSwitch)
+           /* filterFuegoSwitch = view.findViewById(R.id.filterFuegoSwitch)
             filterAireSwitch = view.findViewById(R.id.filterAireSwitch)
             filterAguaSwitch = view.findViewById(R.id.filterAguaSwitch)
-            filterTierraSwitch = view.findViewById(R.id.filterTierraSwitch)
+            filterTierraSwitch = view.findViewById(R.id.filterTierraSwitch)*/
 
         }
         fun render(horoscope: Horoscope) {
@@ -88,4 +88,9 @@ class HoroscopeAdapter(private val dataSet: List<Horoscope>,
     override fun getItemCount():Int {
         return dataSet.size
     }
+    fun updateData(newDataSet: List<Horoscope>) {
+        dataSet = newDataSet
+        notifyDataSetChanged()
+    }
+
 }
