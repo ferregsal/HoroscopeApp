@@ -8,10 +8,48 @@
     android:orientation="vertical"
     android:paddingTop="30dp"
     >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="FUEGO"
+        android:id="@+id/filterFuegoSwitch"
+        />
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="AIRE"
+        android:id="@+id/filterAireSwitch"
+        />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="AGUA"
+        android:id="@+id/filterAguaSwitch"
+        />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="TIERRA"
+        android:id="@+id/filterTierraSwitch"
+        />
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 </LinearLayout>

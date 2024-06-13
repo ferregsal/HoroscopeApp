@@ -26,7 +26,20 @@ class DetailActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.nameTextViewDetail).setText(horoscope.name)
         findViewById<ImageView>(R.id.imageViewDetail).setImageResource(horoscope.logo)
         //findViewById<ImageView>(R.id.imageViewDetail).setBackgroundResource(horoscope.color)
-        findViewById<CardView>(R.id.logoDetailCardView).setCardBackgroundColor(logoDetailCardView.context.getColor(horoscope.color))
+        //findViewById<CardView>(R.id.logoDetailCardView).setCardBackgroundColor(logoDetailCardView.context.getColor(horoscope.color))
+        if (horoscope.elemento=="FUEGO"){
+            logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.granate))
+        }
+        else if (horoscope.elemento=="AGUA"){
+            logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.azul_polvo))
+        }
+        else if (horoscope.elemento=="AIRE"){
+            logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.gris_perla))
+        }
+        else if (horoscope.elemento=="TIERRA"){
+            logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.ocre_dorado))
+        }
+
         backButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             finish()
