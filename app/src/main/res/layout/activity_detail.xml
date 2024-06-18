@@ -23,7 +23,7 @@
             android:layout_height="180dp"
             android:id="@+id/imageViewDetail"
             android:layout_gravity="center"
-
+            android:paddingTop="10dp"
             >
 
         </ImageView>
