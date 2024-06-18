@@ -42,7 +42,7 @@
             android:layout_gravity="bottom|end"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_favorite_selected"
-            app:tint="@color/black" />
+            app:tint="@color/gris_perla2" />
     </FrameLayout>
 
 
