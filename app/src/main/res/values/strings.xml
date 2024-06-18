@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
 
+    <string name="menu_search">Search</string>
+    <string name="menu_next">Next</string>
+    <string name="menu_prev">Previous</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_share">Share</string>
+
     <string name="horoscope_name_aries">Aries</string>
     <string name="horoscope_name_taurus">Taurus</string>
     <string name="horoscope_name_gemini">Gemini</string>

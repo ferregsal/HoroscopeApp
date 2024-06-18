@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Activities.MainActivity"
     android:orientation="vertical"
     android:paddingTop="30dp"
     >
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,31 +17,32 @@
         >
     <Switch
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="FUEGO"
         android:id="@+id/filterFuegoSwitch"
         />
 
     <Switch
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="AIRE"
         android:id="@+id/filterAireSwitch"
         />
 
     <Switch
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="AGUA"
         android:id="@+id/filterAguaSwitch"
         />
 
     <Switch
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:text="TIERRA"
         android:id="@+id/filterTierraSwitch"
         />
+
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

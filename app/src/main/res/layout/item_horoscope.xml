@@ -1,52 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="270dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical"
 
 
     >
-<androidx.cardview.widget.CardView
-    android:layout_width="180dp"
-    android:layout_height="180dp"
-    app:cardCornerRadius="200dp"
-    android:layout_gravity="center"
-    app:cardBackgroundColor="@color/white"
-    android:id="@+id/logoCardView"
-    app:cardElevation="5dp"
-    >
-<ImageView
-    android:layout_width="130dp"
-    android:layout_height="130dp"
-    android:id="@+id/logoImageView"
-    android:layout_gravity="center"
+
+    <FrameLayout
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center|top">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logoCardView"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="200dp"
+            app:cardElevation="0dp">
 
 
-        />
-</androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/nameTextView"
-    android:text="Horoscope Name"
-    android:textSize="30sp"
-    android:layout_gravity="center"
-    android:textStyle="bold"
-    android:textColor="@color/black"
-    />
+        <ImageView
+            android:id="@+id/favoriteImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|end"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_favorite_selected"
+            app:tint="@color/black" />
+    </FrameLayout>
+
+
     <TextView
+        android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/descriptionTextview"
-        android:text="Description"
-        android:textSize="24sp"
         android:layout_gravity="center"
+        android:text="Horoscope Name"
         android:textColor="@color/black"
-        />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/descriptionTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Description"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
 
 </LinearLayout>

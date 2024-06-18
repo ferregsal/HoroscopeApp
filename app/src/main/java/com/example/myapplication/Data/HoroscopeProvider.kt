@@ -1,8 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.Data
+
+import com.example.myapplication.R
 
 class HoroscopeProvider {
     companion object {
-        private val horoscopeList:List<Horoscope> = listOf(
+         val horoscopeList:List<Horoscope> = listOf(
             Horoscope("aries", R.string.horoscope_name_aries,R.string.horoscope_date_aries, R.drawable.aries_icon , R.color.gris_perla,"FUEGO"),
             Horoscope("taurus", R.string.horoscope_name_taurus,R.string.horoscope_date_taurus, R.drawable.taurus_icon, R.color.gris_carbón,"TIERRA"),
             Horoscope("gemini", R.string.horoscope_name_gemini,R.string.horoscope_date_gemini, R.drawable.gemini_icon, R.color.beige_claro,"AIRE"),

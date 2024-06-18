@@ -1,18 +1,16 @@
-package com.example.myapplication
+package com.example.myapplication.Adapters
 
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.horoscopeapp.utils.SessionManager
+import com.example.myapplication.Data.Horoscope
+import com.example.myapplication.R
 
 
 class HoroscopeAdapter(private var dataSet: List<Horoscope>,
@@ -26,6 +24,7 @@ class HoroscopeAdapter(private var dataSet: List<Horoscope>,
         val logoImageView: ImageView
         val descriptionTextView: TextView
         val logoCardView : CardView
+        private val favoriteImageView: ImageView
        /* var filterFuegoSwitch: Switch
         var filterAireSwitch: Switch
         var filterAguaSwitch: Switch
@@ -37,6 +36,7 @@ class HoroscopeAdapter(private var dataSet: List<Horoscope>,
             logoImageView = view.findViewById(R.id.logoImageView)
             descriptionTextView = view.findViewById(R.id.descriptionTextview)
             logoCardView = view.findViewById(R.id.logoCardView)
+           favoriteImageView = view.findViewById(R.id.favoriteImageView)
            /* filterFuegoSwitch = view.findViewById(R.id.filterFuegoSwitch)
             filterAireSwitch = view.findViewById(R.id.filterAireSwitch)
             filterAguaSwitch = view.findViewById(R.id.filterAguaSwitch)
@@ -55,6 +55,13 @@ class HoroscopeAdapter(private var dataSet: List<Horoscope>,
                 "AGUA" -> logoCardView.setCardBackgroundColor(logoCardView.context.getColor(R.color.azul_polvo))
                 "AIRE" -> logoCardView.setCardBackgroundColor(logoCardView.context.getColor(R.color.gris_perla))
                 "TIERRA" -> logoCardView.setCardBackgroundColor(logoCardView.context.getColor(R.color.ocre_dorado))
+            }
+            val context = itemView.context
+            var isFavorite = SessionManager(context).isFavorite(horoscope.id)
+            if (isFavorite) {
+                favoriteImageView.visibility = View.VISIBLE
+            } else {
+                favoriteImageView.visibility = View.GONE
             }
 
     }
