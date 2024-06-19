@@ -50,7 +50,7 @@ class HoroscopeAdapter(private var dataSet: List<Horoscope>,
             //logoImageView.setBackgroundResource(horoscope.color)
             //logoCardView.setBackgroundResource(horoscope.color)
             //logoCardView.setCardBackgroundColor(logoCardView.context.getColor(horoscope.color))
-            when (horoscope.elemento) {
+            when (horoscope.element) {
                 "FUEGO" -> logoCardView.setCardBackgroundColor(logoCardView.context.getColor(R.color.granate))
                 "AGUA" -> logoCardView.setCardBackgroundColor(logoCardView.context.getColor(R.color.azul_polvo))
                 "AIRE" -> logoCardView.setCardBackgroundColor(logoCardView.context.getColor(R.color.gris_perla))

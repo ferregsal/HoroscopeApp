@@ -43,16 +43,16 @@ class DetailActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.imageViewDetail).setImageResource(horoscope.logo)
         //findViewById<ImageView>(R.id.imageViewDetail).setBackgroundResource(horoscope.color)
         //findViewById<CardView>(R.id.logoDetailCardView).setCardBackgroundColor(logoDetailCardView.context.getColor(horoscope.color))
-        if (horoscope.elemento=="FUEGO"){
+        if (horoscope.element=="FUEGO"){
             logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.granate))
         }
-        else if (horoscope.elemento=="AGUA"){
+        else if (horoscope.element=="AGUA"){
             logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.azul_polvo))
         }
-        else if (horoscope.elemento=="AIRE"){
+        else if (horoscope.element=="AIRE"){
             logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.gris_perla))
         }
-        else if (horoscope.elemento=="TIERRA"){
+        else if (horoscope.element=="TIERRA"){
             logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.ocre_dorado))
         }
 

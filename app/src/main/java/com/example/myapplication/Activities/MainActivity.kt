@@ -3,10 +3,8 @@ package com.example.myapplication.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.style.ClickableSpan
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Switch
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -72,10 +70,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun applyFilters() {
         horoscopeList = HoroscopeProvider.findAll().filter {
-            (filterFuegoSwitch.isChecked && it.elemento == "FUEGO") ||
-                    (filterAireSwitch.isChecked && it.elemento == "AIRE") ||
-                    (filterAguaSwitch.isChecked && it.elemento == "AGUA") ||
-                    (filterTierraSwitch.isChecked && it.elemento == "TIERRA") ||
+            (filterFuegoSwitch.isChecked && it.element == "FUEGO") ||
+                    (filterAireSwitch.isChecked && it.element == "AIRE") ||
+                    (filterAguaSwitch.isChecked && it.element == "AGUA") ||
+                    (filterTierraSwitch.isChecked && it.element == "TIERRA") ||
                     (!filterFuegoSwitch.isChecked && !filterAireSwitch.isChecked && !filterAguaSwitch.isChecked && !filterTierraSwitch.isChecked)
         }
         if (showFavorites) {
