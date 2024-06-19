@@ -35,14 +35,24 @@ class DetailActivity : AppCompatActivity() {
         val id = intent.getStringExtra(EXTRA_HOROSCOPE_ID)
         val name = intent.getIntExtra("HOROSCOPE_NAME", -1)
         val logo = intent.getIntExtra("HOROSCOPE_LOGO", -1)
+
+
         logoDetailCardView =findViewById(R.id.logoDetailCardView)
         horoscope = HoroscopeProvider.findById(id!!)!!
         isFavorite = session.isFavorite(horoscope.id)
 
+
         findViewById<TextView>(R.id.nameTextViewDetail).setText(horoscope.name)
         findViewById<ImageView>(R.id.imageViewDetail).setImageResource(horoscope.logo)
+       // findViewById<TextView>(R.id.compatNames).setText(compatName.toString())
         //findViewById<ImageView>(R.id.imageViewDetail).setBackgroundResource(horoscope.color)
         //findViewById<CardView>(R.id.logoDetailCardView).setCardBackgroundColor(logoDetailCardView.context.getColor(horoscope.color))
+
+        // Obtener y mostrar los nombres de compatibilidad
+        val compatNames = HoroscopeProvider.getCompatibilityNames(horoscope)
+        findViewById<TextView>(R.id.compatNames).text = compatNames.joinToString(", ")
+
+
         if (horoscope.element=="FUEGO"){
             logoDetailCardView.setCardBackgroundColor(logoDetailCardView.context.getColor(R.color.granate))
         }

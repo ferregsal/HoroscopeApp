@@ -1,9 +1,12 @@
 package com.example.myapplication.Data
 
 import com.example.myapplication.R
+import android.content.Context
 
 class HoroscopeProvider {
     companion object {
+
+
          val horoscopeList:List<Horoscope> = listOf(
             Horoscope("aries", R.string.horoscope_name_aries,R.string.horoscope_date_aries, R.drawable.aries_icon , R.color.gris_perla,"FUEGO",
                 compatibilityHoroscope.compatibilityAries.entries.map { it.name }),
@@ -36,6 +39,25 @@ class HoroscopeProvider {
         fun findById(id:String) : Horoscope/* ? declara que es opcional*/{
             return horoscopeList.find {it.id == id}!! //no es opcional, seguro que tiene un valor
         }
-    }
+        /*fun getCompatibilityNames(horoscope: Horoscope): List<String> {
+            val compatibilityIds = when (horoscope.id) {
+                "aries" -> compatibilityHoroscope.compatibilityAries.entries.map { it.name }
+                "taurus" -> compatibilityHoroscope.compatibilityTaurus.entries.map { it.name }
+                "gemini" -> compatibilityHoroscope.compatibilityGemini.entries.map { it.name }
+                "cancer" -> compatibilityHoroscope.compatibilityCancer.entries.map { it.name }
+                "leo" -> compatibilityHoroscope.compatibilityLeo.entries.map { it.name }
+                "virgo" -> compatibilityHoroscope.compatibilityVirgo.entries.map { it.name }
+                "libra" -> compatibilityHoroscope.compatibilityLibra.entries.map { it.name }
+                "scorpio" -> compatibilityHoroscope.compatibilityScorpio.entries.map { it.name }
+                "sagittarius" -> compatibilityHoroscope.compatibilitySagittarius.entries.map { it.name }
+                "capricorn" -> compatibilityHoroscope.compatibilityCapricorn.entries.map { it.name }
+                "aquarius" -> compatibilityHoroscope.compatibilityAquarius.entries.map { it.name }
+                "pisces" -> compatibilityHoroscope.compatibilityPisces.entries.map { it.name }
+                else -> emptyList()
+            }
+            return compatibilityIds.mapNotNull { id ->
+                findById(id)?.name?.let { context.getString(it) } // **Aquí se convierte el ID en nombre**
 
+}*/
+}
 }
