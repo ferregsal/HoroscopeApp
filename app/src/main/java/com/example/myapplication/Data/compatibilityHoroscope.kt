@@ -2,42 +2,42 @@ package com.example.myapplication.Data
 
 enum class compatibilityHoroscope {;
    enum class compatibilityAries {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, aries, capricorn, cancer, taurus
    }
    enum class compatibilityTaurus {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      capricorn, cancer, virgo, scorpio, pisces, leo, libra, taurus, aquarius, aries, gemini, sagittarius
    }
    enum class compatibilityGemini {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      libra, leo, aquarius, aries, capricorn, virgo, cancer, sagittarius, gemini, pisces, taurus, scorpio
    }
    enum class compatibilityCancer {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      pisces, taurus, scorpio, virgo, capricorn, cancer, gemini, sagittarius, libra, aries, leo, aquarius
    }
    enum class compatibilityLeo {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      aries, libra, sagittarius, gemini, taurus, aquarius, scorpio, leo, pisces, cancer, virgo, capricorn
    }
    enum class compatibilityVirgo {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      capricorn, cancer, taurus, scorpio, pisces, gemini, libra, virgo, aries, sagittarius, leo, aquarius
    }
    enum class compatibilityLibra {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      leo, gemini, aquarius, pisces, aries, libra, sagittarius, virgo, taurus, capricorn, cancer, scorpio
    }
    enum class compatibilityScorpio {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      pisces, capricorn, cancer, taurus, virgo, scorpio, aquarius, leo, aries, libra, gemini, sagittarius
    }
 
    enum class compatibilitySagittarius {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      aries, leo, aquarius, libra, pisces, gemini, capricorn, cancer, virgo, sagittarius, taurus, scorpio
    }
 
    enum class compatibilityCapricorn {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      taurus, virgo, scorpio, pisces, cancer, capricorn, gemini, acuarius, sagittarius, libra, aries, leo
    }
    enum class compatibilityAquarius {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      sagittarius, libra, gemini, aries, scorpio, capricorn, leo, taurus, acuarius, pisces, virgo, cancer
    }
    enum class compatibilityPisces {
-      leo, sagittarius, libra, gemini, aquarius, pisces, virgo, scorpio, capricorn, cancer, taurus
+      cancer, scorpio, virgo, libra, capricorn, taurus, aries, sagittarius, pisces, gemini, aquarius, leo
    }
 
 }
